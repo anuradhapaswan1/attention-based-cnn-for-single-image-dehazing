@@ -1,18 +1,52 @@
 # Attention-Based CNN for Single Image Dehazing (OVAL-Net)
 
-This project implements an end-to-end dehazing solution using the OVAL-Net architecture, specifically optimized for outdoor urban environments.
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1CmFyogY-AxL8L2c38kcNRAiarkUPjgjC?usp=sharing)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/)
 
-## 🛠 Features
-- **Dual-Attention Mechanism:** Utilizes both Channel and Pixel attention to handle non-uniform haze.
-- **Residual Learning:** Employs global residual connections to preserve image structural integrity.
-- **Dataset:** Trained on the SOTS-Outdoor benchmark from the RESIDE dataset.
+This repository contains the implementation of **OVAL-Net**, a high-performance convolutional neural network designed for single image dehazing. By leveraging a dual-attention mechanism, this model effectively restores clarity in complex outdoor urban environments where haze density is non-uniform.
 
-## 📊 Results
-- **Training Loss:** ~0.063
-- **Hardware:** Optimized for NVIDIA T4 GPU.
-- **Interface:** Interactive Gradio UI for real-time inference.
+---
 
-## 🚀 How to Run
-1. Open the `.ipynb` file in Google Colab.
-2. Ensure you have an NVIDIA GPU runtime enabled.
-3. Run all cells to launch the Gradio web interface.
+## 📥 Pre-trained Weights
+The serialized model tensors (`.pth` file) exceed GitHub's standard file size limitations for direct uploads.
+
+* **Download Link:** [Download OVAL-Net Weights (Google Drive)](https://drive.google.com/file/d/1aYGzxudR69He8SWqmTH9t4fiTY3WGxva/view?usp=drive_link)
+* **Setup:** Place the downloaded `.pth` file in the root directory of this project to enable the inference engine.
+
+---
+
+## 🧠 Architecture Overview
+OVAL-Net replaces traditional physics-based scattering models with a deep-learning end-to-end approach focused on two key pillars:
+
+1. **Dual-Attention Mechanism:**
+    * **Channel Attention (CA):** Recalibrates feature maps to correct spectral distortions and color shifts.
+    * **Pixel Attention (PA):** Assigns higher weights to spatially distant regions where haze is densest.
+2. **Global Residual Learning:** The network learns the "haze residue" rather than reconstructing the clear image from scratch, preserving fine structural textures through identity mapping.
+
+---
+
+## 🧪 Experimental Results
+The model was trained and validated on the **SOTS-Outdoor (RESIDE)** benchmark.
+
+* **Convergence:** Achieved a final L1 Training Loss of **0.0632** within 5 refinement epochs.
+* **Optimization:** Fully optimized for **NVIDIA T4 GPUs** using **Automatic Mixed Precision (AMP)**.
+* **Inference:** Real-time restoration capability via an integrated Gradio web interface.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+* Python 3.8+
+* PyTorch / Torchvision
+* Gradio (for the interactive UI)
+* CUDA-enabled GPU
+
+### Usage
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/anuradhapaswan1/Attention-Based-Single-Image-Dehazing.git](https://github.com/anuradhapaswan1/Attention-Based-Single-Image-Dehazing.git)
+
+
+
