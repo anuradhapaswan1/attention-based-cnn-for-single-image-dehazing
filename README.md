@@ -1,6 +1,6 @@
 # Attention-Based CNN for Single Image Dehazing (OVAL-Net)
 
-[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1CmFyogY-AxL8L2c38kcNRAiarkUPjgjC?usp=sharing)
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1F5383GNsJ2eRkNZueHDsqR9RbwhGzgAv#scrollTo=34e0703b)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Framework: PyTorch](https://img.shields.io/badge/Framework-PyTorch-orange.svg)](https://pytorch.org/)
 
